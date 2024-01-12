@@ -1,0 +1,155 @@
+.nav {
+  align-items: center;
+}
+.nav ul li {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav ul li a {
+  color: #565656;
+  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  font-family: "Oxanium", cursive !important;
+}
+.nav ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: solid 2px #d01e2c;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.nav ul li a:hover:after {
+  width: 100%;
+}
+
+.menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 50px;
+  width: 50px;
+  z-index: 100;
+}
+
+.menu-link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.hamburger-icon {
+  position: absolute;
+  width: 35px;
+  height: 26px;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 1px;
+}
+.hamburger-bar {
+  background-color: #d01e2c;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.hamburger-bar-2 {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.hamburger-bar-3 {
+  bottom: 0;
+}
+.menu.open .hamburger-bar-1 {
+  transform: translateY(10px) translateY(-50%) rotate(45deg);
+}
+.menu.open .hamburger-bar-2 {
+  opacity: 0;
+}
+.menu.open .hamburger-bar-3 {
+  transform: translateY(-15px) translateY(50%) rotate(-45deg);
+}
+
+.menu-overlay {
+  background-color: #ffffffeb;
+  color: #ffffff;
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  /*opacity: 0;*/
+  visibility: hidden;
+  padding: 30px;
+  right: -30%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-overlay.open {
+  /*opacity: 1;*/
+  visibility: visible;
+  right: 0%;
+  overflow: auto;
+}
+
+.menu-overlay ul {
+  margin-top: 20px;
+  display: grid;
+}
+
+.menu-overlay a {
+  margin: 5px 0;
+  padding: 5px 0;
+  color: #000;
+  text-align: center;
+  display: block;
+}
+
+.menu-overlay p {
+  text-align: center;
+  color: #000;
+  margin-top: 40px;
+}
+
+.menu-overlay p a {
+  display: inline !important;
+}
+
+.menu-overlay .contact-list a {
+  padding: 0 !important;
+  margin: 2px 0 !important;
+}
+
+@media screen and (max-width: 900px) {
+  .nav ul li a {
+    margin: 0;
+  }
+
+  .menu-overlay {
+    width: 100%;
+    right: -100%;
+  }
+}
